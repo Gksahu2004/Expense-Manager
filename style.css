@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navbar section */
+
+#navbar1 {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: #007bff;
+}
+
+#logo {
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+/* Sign-up Section */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #343a40;
+    overflow: hidden;
+}
+
+.hero__image {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    opacity: 0.4;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hero:hover .hero__image {
+    opacity: 0.45;
+    transform: scale(1.05);
+}
+
+.hero__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    transition: color 0.5s ease, transform 0.5s ease;
+}
+
+.hero__content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    white-space: nowrap;
+    border-right: 0.15em solid #ff6f61;
+    overflow: hidden;
+    display: inline-block;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Blinking cursor effect */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #ff6f61;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero__content h1 {
+        font-size: 1.5rem;
+        white-space: normal;
+        border-right: none;
+        animation: slideInFromLeft 1s ease-out forwards;
+    }
+}
+
+/* Slide-in animation for smaller screens */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero__content button {
+    background-color: #007bff;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero__content button a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero__content button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .hero__content h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Container Section */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33% - 40px);
+    max-width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+}
+
+.card-image, .category-image, .chart-image, .chaart-image {
+    width: 50%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover .card-image, .section:hover .category-image, .section:hover .chart-image, .section:hover .chaart-image {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-section {
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.section:hover .text-section {
+    color: #007BFF;
+}
+
+@media (max-width: 1024px) {
+    .section {
+        flex: 1 1 calc(50% - 40px);
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        flex: 1 1 100%;
+        max-width: 100%;
+        flex-direction: column;
+        transition: none;
+    }
+    .section:nth-child(even) {
+        flex-direction: column-reverse;
+    }
+    .card-image, .category-image, .chart-image, .chaart-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Footer Section */
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    /* padding: 10px 0; */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 5px 0;
+}
